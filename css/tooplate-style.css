@@ -19,7 +19,9 @@ body {
 }
 
 .small-text {
+  background: #474559;
   color: #5b5b5b;
+  color: white;
   font-size: 14px;
   font-weight: bold;
   padding: 8px 16px;
