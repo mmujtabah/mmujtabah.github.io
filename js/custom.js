@@ -2,14 +2,33 @@
 
   "use strict";
 
+  // Function to set the theme based on local storage
+  function setThemeFromStorage() {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      $('body').addClass('dark-mode');
+      $('.theme-switch__checkbox').prop('checked', true);
+    } else {
+      $('body').removeClass('dark-mode');
+      $('.theme-switch__checkbox').prop('checked', false);
+    }
+  }
+
+  // Set theme on page load
+  $(document).ready(function () {
+    setThemeFromStorage();
+  });
+
   // COLOR MODE SWITCH
   $('.theme-switch__checkbox').change(function () {
     if (this.checked) {
       // Enable dark mode
       $('body').addClass('dark-mode');
+      localStorage.setItem('theme', 'dark');
     } else {
       // Disable dark mode
       $('body').removeClass('dark-mode');
+      localStorage.setItem('theme', 'light');
     }
   });
 
