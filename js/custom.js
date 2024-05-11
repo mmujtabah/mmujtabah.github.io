@@ -39,3 +39,21 @@
   $('.social-links a').tooltip();
 
 })(jQuery);
+
+
+function sendEmail() {
+  const emailAddress = document.getElementById("email").value;
+  Email.send({
+    SecureToken: "f4c1546e-be42-4b75-8586-712604871cd5",
+    To: 'mmujtabah1588@gmail.com',
+    From: "mmujtabah1588@gmail.com",
+    Subject: "Contact Form Inquiry",
+    Body: "Name: " + document.getElementById("name").value
+      + "<br> Email: " + emailAddress
+      + "<br> Message: " + document.getElementById("message").value
+  }).then(
+    message => alert(`Message sent successfully`)
+  ).catch(
+    error => alert(`Error occurred while sending message: ${alert}`)
+  );
+}
