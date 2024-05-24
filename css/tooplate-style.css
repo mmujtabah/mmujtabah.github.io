@@ -122,19 +122,14 @@ strong {
 }
 
 .animated-info {
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 5px;
-  min-width: 260px;
   position: relative;
-}
-
-.animated-item {
-  color: #ffc200;
+  height: 50px; /* Adjust this according to your text height */
+  overflow: hidden;
 }
 
 .animated-item {
   font-size: 38px;
+  color: #ffc200;
   line-height: inherit;
   display: block;
   opacity: 0;
@@ -143,50 +138,38 @@ strong {
   top: 0;
   right: 0;
   left: 0;
-  animation: BottomTotop 6s linear infinite 0s;
+  animation: BottomTotop 16s linear infinite 0s;
 }
 
-.animated-item:nth-child(2n+2) {
-  animation-delay: 2s;
-}
-
-.animated-item:nth-child(3n+3) {
+.animated-item:nth-child(2) {
   animation-delay: 4s;
 }
 
+.animated-item:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.animated-item:nth-child(4) {
+  animation-delay: 12s;
+}
+
 @keyframes BottomTotop {
-  0% {
-    opacity: 0;
-  }
-
-  5% {
+  0%, 25% {
     opacity: 0;
     transform: translateY(5px);
   }
 
-  10% {
+  12.5%, 18.75% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 
-  25% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-
-  30% {
+  25%, 100% {
     opacity: 0;
     transform: translateY(5px);
-  }
-
-  80% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
   }
 }
+
 
 .navbar {
   position: fixed;
