@@ -355,7 +355,9 @@ strong {
 .dark-mode .owl-carousel button.owl-dot {
   color: #ffffff;
 }
-
+.dark-mode .owl-carousel .owl-nav [class*=owl-]:hover {
+  color: #ffc200;
+}
 
 .timeline-wrapper {
   position: relative;
